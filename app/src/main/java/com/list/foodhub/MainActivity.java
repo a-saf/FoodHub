@@ -5,6 +5,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -28,5 +30,11 @@ public class MainActivity extends AppCompatActivity {
         tvItems.setAdapter(adapter);
         // Set layout manager to position the items
         tvItems.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    public void addItem(View view) {
+        TextView newItem = (TextView) findViewById(R.id.EditGroceryList);
+        String itemName = newItem.getText().toString();
+        items.add(new Item(itemName, null, 0, null));
     }
 }
